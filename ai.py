@@ -6,19 +6,20 @@ import json
 import time
 import requests
 from dotenv import load_dotenv
+import streamlit as st
 
 load_dotenv()
 
 # Openai set
-openai.api_key = os.getenv('OPENAI_API_KEY')  
+openai.api_key = st.secrets['OPENAI_API_KEY'] # os.getenv('OPENAI_API_KEY')  
 
 # Naver clova set
-clova_ocr_apigw_url = os.getenv('CLOVA_OCR_APIGW_URL')
-clova_ocr_secret_key = os.getenv('CLOVA_OCR_SECRET_KEY')
+clova_ocr_apigw_url = st.secrets['CLOVA_OCR_APIGW_URL'] # os.getenv('CLOVA_OCR_APIGW_URL')
+clova_ocr_secret_key = st.secrets['CLOVA_OCR_SECRET_KEY'] # os.getenv('CLOVA_OCR_SECRET_KEY')
 
 # Naver api set
-naver_client_id = os.getenv('NAVER_CLIENT_ID')
-naver_secret = os.getenv('NAVER_SECRET')
+naver_client_id = st.secrets['NAVER_CLIENT_ID'] # os.getenv('NAVER_CLIENT_ID')
+naver_secret = st.secrets['NAVER_SECRET'] # os.getenv('NAVER_SECRET')
 
 def getKeywords(text):
     prompt = f'''
