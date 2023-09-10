@@ -1,4 +1,5 @@
 import streamlit as st 
+import base64
 from ai import *
 
 st.set_page_config(
@@ -24,7 +25,7 @@ if img_file_buffer is not None:
         text, _ = directocr(data)
     
         # chatgpt logic
-        keyword = 'aws' # getKeywords(text)
+        keyword = getKeywords(text)
         
         col3, col4 = st.columns(2)
         with col3:
