@@ -9,6 +9,10 @@ st.set_page_config(
 
 st.title('북렌즈')
 
+col5, col6, col7 = st.columns(3)
+with col5:
+    st.image('booklens_logo.png')
+
 if 'filename' not in st.session_state:
     st.session_state['filename'] = ''
 
